@@ -1,0 +1,5 @@
+   Compiling capcover v1.0.0 (/Users/zoonyanapat/Documents/Coding_Time/Projects/CAPCOVER)
+    Finished `release` profile [optimized] target(s) in 3.36s
+wrote vectors n=64 d=8 and queries n=4 d=8
+built n=64 d=8 k=14 file_bytes=988 budget_bytes=1024
+capi ok dim=8 n=64 k=14 decision=1 bitmap=1110 version=1.0.0
