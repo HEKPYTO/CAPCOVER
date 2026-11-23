@@ -10,7 +10,10 @@ mkdir -p "$real"
 if [ ! -f "$real/sift_base.fvecs" ]; then
   curl -L --fail --proto '=https' --tlsv1.2 \
     -o "$real/sift.tar.gz" \
-    https://ftp.irisa.fr/local/texmex/corpus/sift.tar.gz
+    https://ftp.irisa.fr/local/texmex/corpus/sift.tar.gz || \
+  curl -L --fail --proto '=ftp' \
+    -o "$real/sift.tar.gz" \
+    ftp://ftp.irisa.fr/local/texmex/corpus/sift.tar.gz
   tar -xzf "$real/sift.tar.gz" -C "$real" \
     --no-same-owner --no-same-permissions
   mv "$real/sift/sift_base.fvecs" "$real/sift_base.fvecs"
