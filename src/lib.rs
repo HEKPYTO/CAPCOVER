@@ -10,6 +10,9 @@ pub mod rng;
 pub mod vector;
 pub mod verify;
 
+#[cfg(feature = "usearch")]
+pub mod usearch;
+
 pub use build::{build, BuildConfig, BuiltIndex};
 pub use error::{Error, Result};
 pub use fixture::{generate, Fixture, FixtureKind};
