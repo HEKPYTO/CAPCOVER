@@ -23,6 +23,11 @@ jobs:
         run: |
           bad=$(git ls-files '*.md' ':!:README.md' ':!:**/README.md' NOTICE CHANGELOG)
           if [ -n "$bad" ]; then printf '%s\n' "$bad"; echo 'Only README.md and LICENSE may be tracked as markdown'; exit 1; fi
+      - name: Guard private paths
+        run: |
+          if rg -n --no-messages -g '!.github/workflows/ci.yml' '(/Users/|/home/|macbook-pro|fedora-pc|AGENTS\.md|GEMINI\.md|HANDOFF\.md|TODO\.md)' .; then
+            echo 'private path or local-only file reference'; exit 1
+          fi
       - uses: dtolnay/rust-toolchain@df2a88e9fe4098bad09cb42c3dec7187f15861fc
         with:
           toolchain: ${{ matrix.toolchain }}
@@ -63,3 +68,7 @@ jobs:
           toolchain: stable
       - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
       - run: cargo publish --dry-run
+      - name: Install packaged binary
+        run: |
+          cargo install --locked --path . --root "$RUNNER_TEMP/capcover-install"
+          "$RUNNER_TEMP/capcover-install/bin/capcover" --version
