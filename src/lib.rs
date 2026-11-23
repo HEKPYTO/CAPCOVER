@@ -1,5 +1,6 @@
 pub mod bench;
 pub mod build;
+pub mod capi;
 pub mod error;
 pub mod fixture;
 pub mod format;
