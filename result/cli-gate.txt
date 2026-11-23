@@ -1,0 +1,36 @@
+$ capcover --version
+capcover 0.1.0
+$ capcover selftest
+selftest ok n=256 d=16 k=30 uncovered=0
+$ capcover gen
+wrote vectors n=128 d=8 and queries n=4 d=8
+$ capcover build
+built n=128 d=8 k=37 file_bytes=2028 budget_bytes=2048
+$ capcover verify --full
+verify n=128 uncovered=0 mode=full
+$ capcover check text
+true
+true
+true
+false
+queries=4 accepted=3 rejected=1
+$ capcover check bitmap
+queries=4 accepted=3 rejected=1
+   1   1   1   0
+$ capcover info
+magic CCV1
+version 1
+dim 8
+n 128
+k 37
+seed 7
+encoding f32
+budget_bytes 2048
+$ capcover bench
+phi=0.25 fnr=0.0 fn=0
+$ capcover missing-file
+capcover: io error: No such file or directory (os error 2)
+exit=2
+$ capcover bad-dim
+capcover: invalid data: f32 file has 1024 values, not a multiple of dimension 7
+exit=2

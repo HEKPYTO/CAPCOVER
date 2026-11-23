@@ -1,0 +1,31 @@
+{
+  "n": 20000,
+  "d": 128,
+  "k": 242,
+  "top_k": 10,
+  "similarity": 0.95,
+  "tau": 0.050000012,
+  "alpha_rad": 0.31756046746904604,
+  "tp": 133,
+  "fp": 1867,
+  "tn": 0,
+  "fn": 0,
+  "fnr": 0.0,
+  "fpr": 1.0,
+  "phi": 0.0,
+  "gate_recall": 1.0,
+  "search_recall": 1.0,
+  "usearch_build_s": 2.883293375,
+  "filter_p50_us": 0.417,
+  "usearch_p50_us": 80.625,
+  "qps_base": 12540.39559254753,
+  "qps_gated": 12545.34294664563,
+  "speedup": 1.0003945133996444,
+  "peak_rss_mb": 40.875,
+  "seed": 7,
+  "hardware": {
+    "os": "macos",
+    "arch": "aarch64",
+    "cpus": 8
+  }
+}

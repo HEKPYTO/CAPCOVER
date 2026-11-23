@@ -1,0 +1,2 @@
+$ target/release/capcover verify --index target/real/glove250.ccv --vectors target/real/glove_base250.f32 --full
+verify n=250000 uncovered=0 mode=full

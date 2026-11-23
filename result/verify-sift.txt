@@ -1,0 +1,2 @@
+$ target/release/capcover verify --index target/real/sift250.ccv --vectors target/real/sift_base250.fvecs --full
+verify n=250000 uncovered=0 mode=full
